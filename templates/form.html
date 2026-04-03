@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if lang == "zh" %}
+
+<h2 class="text-center fw-bold">🌱 歡迎來到皮克敏玩家交流平台！</h2>
+
+<div class="text-center p-4 mx-auto" style="max-width: 800px;">
+
+<p class="text-secondary">
+在這裡，你可以分享你的 <b>皮克敏好友碼</b>，
+認識來自香港或世界各地的玩家。
+無論你只是想互加好友、一起打菇、交換遊戲福利，
+還是希望在現實生活中認識志同道合的朋友，
+都可以在這裡留下你的資料。
+</p>
+
+<p class="text-secondary">
+只需要填寫你的🆔好友碼、📍所在地區，
+以及簡單寫下你的🔥目的或自我介紹，
+其他玩家就可以透過列表找到你並加你好友✅！
+</p>
+
+<p class="fw-semibold text-success">
+🌿 一起散步、一起打菇、一起認識新朋友！
+</p>
+
+
+<div class="container mt-3">
+  <div class="card text-center shadow-sm border-0 mx-auto" style="max-width:420px; background:#f4fff6;">
+    <div class="card-body">
+      <h2 class="fw-bold text-success display-5">
+        {{ player_count }}
+      </h2>
+
+      <p class="mb-0 fs-5">
+      🎉 位皮克敏玩家已加入
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="alert alert-warning mt-1 mx-auto" style="max-width:700px;">
+    ⚠ 請保持友善交流，避免發布不適當內容。
+</div>
+
+
+{% else %}
+<h2 class="text-center fw-bold">🌱 Connect with Pikmin Bloom players around the world.</h2>
+
+<div class="text-center p-4 mx-auto" style="max-width: 800px;">
+
+<p class="text-secondary">
+This website allows players to share their <b>Pikmin Bloom Friend Code</b>
+and meet other players from Hong Kong or anywhere in the world.
+Whether you are looking for friends to gain in-game benefits,
+fight mushrooms together, or simply meet new people who enjoy the game,
+this platform helps players find each other.
+</p>
+
+<p class="text-secondary">
+Simply submit your 🆔friend code, 📍your location,
+and a short note about 🔥what you are looking for.
+Other players can browse the list and add you in the game✅!
+</p>
+
+<p class="fw-semibold text-success">
+🌿 Walk together, battle mushrooms together, and make new friends!
+</p>
+
+    <div class="container mt-3">
+
+    <div class="card text-center shadow-sm border-0 mx-auto" style="max-width:420px; background:#f4fff6;">
+
+        <div class="card-body">
+
+        <h2 class="fw-bold text-success display-5">
+            {{ player_count }}
+        </h2>
+
+        <p class="mb-0 fs-5">
+        🎉 Pikmin Bloom Players Joined
+        </p>
+
+        </div>
+
+    </div>
+    </div>
+</div>
+
+
+
+
+<div class="alert alert-warning mt-1 mx-auto" style="max-width:700px;">
+    ⚠ Please be respectful and avoid posting inappropriate content.
+</div>
+
+{% endif %}
+
+
+
+
+
+<div class="card shadow p-4 mx-auto" style="max-width:500px;">
+
+<form method="POST">
+
+<div class="mb-3">
+<label class="form-label">
+    {% if lang == "zh" %}
+    名字
+    {% else %}
+    Name
+    {% endif %}
+</label>
+<input type="text" name="name" class="form-control" maxlength="30" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">
+    {% if lang == "zh" %}
+    皮克敏ID
+    {% else %}
+    Pikmin ID
+    {% endif %}
+</label>
+<input type="text" name="code" class="form-control" maxlength="30" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">
+    {% if lang == "zh" %}
+    活躍地點
+    {% else %}
+    Active Locations
+    {% endif %}
+</label>
+<input type="text" name="location" class="form-control" placeholder="e.g. 香港九龍, UK, 札幌市" maxlength="30" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">
+    {% if lang == "zh" %}
+    自介
+    {% else %}
+    Introduction
+    {% endif %}
+</label>
+<textarea name="note" class="form-control" rows="4" maxlength="150" placeholder="e.g. #交皮友, #真實交友, message to others..." required></textarea>
+<small class="text-muted">最多150字</small>
+</div>
+
+<button class="btn btn-success w-100">
+    {% if lang == "zh" %}
+    提交
+    {% else %}
+    Submit
+    {% endif %}
+</button>
+
+</form>
+
+</div>
+
+
+
+{% endblock %}
