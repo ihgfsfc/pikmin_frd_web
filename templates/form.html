@@ -150,7 +150,13 @@ Other players can browse the list and add you in the game✅!
     {% endif %}
 </label>
 <textarea name="note" class="form-control" rows="4" maxlength="150" placeholder="e.g. #交皮友, #真實交友, message to others..." required></textarea>
-<small class="text-muted">最多150字</small>
+<small class="text-muted">
+    {% if lang == "zh"%}
+    最多150字
+    {% else %}
+    Maximum 150 characters
+    {% endif %}
+</small>
 </div>
 
 <button class="btn btn-success w-100">
